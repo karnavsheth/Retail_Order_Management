@@ -1,0 +1,85 @@
+﻿@{
+    ViewBag.Title = "Index";
+}
+<div class="container">
+    <div class="master">
+        <h2>Order</h2>
+        <table class="table table-responsive">
+            <tr>
+                <td>Order No</td>
+                <td>
+                    <input type="text" id="orderNo" class="form-control" value="XY123" />
+                </td>
+
+            </tr>
+        </table>
+    </div>
+    <div class="details">
+        <h2>
+            Order items
+        </h2>
+        <input type="hidden" id="count" value="1" />
+        <table class="table table-responsive main">
+            <tr>
+                <td>Sr.No</td>
+                <td>Category</td>
+                <td>Product</td>
+                <td>Quantity</td>
+                <td>Rate</td>
+                <td>Service tax Rate</td>
+                <td>Service tax Amount</td>
+                <td>Sub Total</td>
+            </tr>
+            <tr class="mycontainer" id="mainrow">
+                <td>1</td>
+                <td>
+                    <select id="productCategory" class="pc form-control">
+                        <option value="">Select</option>
+                        <option value="1">Category A</option>
+                        <option value="2">Category B</option>
+                        <option value="3">Category C</option>
+                    </select>
+                </td>
+                <td>
+                    <input type="text" id="product" class="product form-control" />
+                </td>
+                <td>
+                    <input type="number" name="quantity" class="quantity form-control" min="1" max="5" value="1">
+                </td>
+                <td>
+                    <input type="number" id="rate" class="rate form-control" disabled />
+                </td>
+                <td><label class="stax"></label></td>
+                <td><label class="staxval"></label></td>
+                <td>
+                    <label class="subtotal"></label>
+                </td>
+                <td><button type="button" id="add" class="form-control btn-default">Add</button></td>
+            </tr>
+        </table>
+        <table class="table table-responsive totaldiv">
+            <tr><td colspan="3"><h3>Total Amount:</h3></td><td class="totalamount"><h3 class="lbltotal">Rs. 0.0</h3></td></tr>
+            <tr><td colspan="3"><h3>Total Service Tax:</h3></td><td class="totalamount"><h3 class="lblstax">Rs. 0.0</h3></td></tr>
+        </table>
+            @*<div style="padding:10px 0; text-align:right">
+                <input id="submit" type="button" value="Get Total" class="btn btn-warning" style="padding:10px 20px" />
+            </div>*@
+    </div>
+</div>
+<link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+<link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css" />
+<script src="~/Scripts/jquery-1.10.2.js"></script>
+<script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+<script src="~/Scripts/myScripts.js"></script>
+<style>
+    span.error {
+        display: block;
+        visibility: hidden;
+        color: red;
+        font-size: 90%;
+    }
+
+    tr.error {
+        background-color: rgba(255,0,0,0.35);
+    }
+</style>

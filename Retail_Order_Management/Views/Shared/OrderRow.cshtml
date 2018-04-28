@@ -1,0 +1,28 @@
+﻿@model WebApplication1.Models.RowViewModel
+@{}
+
+<tr class="mycontainer" id="row_+@Model.Id">
+    <td>@Model.Id</td>
+    <td>
+        <select id="productCategory" class="pc form-control">
+            <option value="">Select</option>
+            <option value="1">Category A</option>
+            <option value="2">Category B</option>
+            <option value="3">Category C</option>
+        </select>
+    </td>
+    <td>
+        <input type="text" id="product" class="product form-control" />
+    </td>
+    <td>
+        <input type="number" name="quantity" class="quantity form-control" min="1" max="5" value="1">
+    </td>
+    <td>
+        <input type="number" id="rate" class="rate form-control" disabled />
+    </td>
+    <td><label class="stax"></label></td>
+    <td><label class="staxval"></label></td>
+    <td>
+        <label class="subtotal"></label>
+    </td>
+</tr>
